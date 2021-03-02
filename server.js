@@ -1,5 +1,6 @@
 var express = require("express");
 var app = express();
+const PORT = process.env.PORT || 3000;
 
 app.get("/", function (req, res) {
     res.sendFile( __dirname + "/public/index.html");
@@ -17,6 +18,4 @@ app.get("*", function (req, res) {
     res.send("Can't find requested page");
 });
 
-app.listen(8081, function () {
-    console.log("App listenin on port 8081!")
-});
+app.listen(PORT);
