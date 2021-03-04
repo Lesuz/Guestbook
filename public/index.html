@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <meta charset="utf-8">
         <link rel="stylesheet" href="./css/styles.css">
         <script src="../server.js"></script>
         <title>Home Page</title>
@@ -11,11 +12,11 @@
             <ul>
                 <li><a href="/">Home</a></li>
 
-                <li><a href="/public/guestbook">Guestbook</a></li>
+                <li><a href="/guestbook">Guestbook</a></li>
 
-                <li><a href="/public/newmessage">New Message</a></li>
+                <li><a href="/newmessage">New Message</a></li>
 
-                <li><a href="/public/ajaxmessage">AJAX messages</a></li>
+                <li><a href="/ajaxmessage">AJAX messages</a></li>
 
             </ul>
         </nav>
@@ -25,15 +26,28 @@
             <h2>Want to be a part of this beautiful Guestbook app?<br><i style="font-size: 15px;">Leave a positive message!
             </i></h2>
             <p>
-                This project has four routes: 
+                This project has four routes and is made with Node and express: 
                 <ul>
                     <li>Frontpage</li>
                     <li>Guestbook</li>
                     <li>New Message</li>
                     <li>AJAX message</li>
                 </ul>
-                
             </p>
+            <p>
+                The guestbook displays messages which are saved on a local json file. It will display the message, 
+                and the username and country of the one who left the message. A new message can be added to this json file 
+                by filling in the form on the New Message -page, which can be found in the navigation on top of this page.
+            </p>
+            <p>Requirements for this project:</p>
+            <ul>
+                <li>4 routes present</li>
+                <li>Homepage has to have actual content</li>
+                <li>Guestbook loads and formats data </li>
+                <li>Forms check for basic errors (no empties allowed)</li>
+                <li>Saving data to a JSON file</li>
+                <li>Publish app in Heroku</li>
+            </ul>
             <p>If you are interested in more of my projects, check out my portfolio <a href="https://www.susannahamalainen.com/" target="_blank">here</a>!</p>
         </div>
         <footer>

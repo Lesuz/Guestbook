@@ -15,10 +15,9 @@ body {
   width: 100%;
   margin-left: auto;
   margin-right: auto;
-  padding: 20px;
 }
 .navbar p {
-  font-size: 70px;
+  font-size: 40px;
   text-align: center;
 }
 .navbar ul {
@@ -27,16 +26,22 @@ body {
   flex-direction: row;
   justify-content: space-between;
   text-align: center;
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
 }
 .navbar ul li {
-  font-size: 30px;
+  font-size: 20px;
   text-decoration: none;
+  padding: 20px;
 }
 .navbar ul li a {
   text-decoration: none;
+  color: #632f19;
 }
+/* front-page*/
 .index-content {
-  width: 90%;
+  width: 70%;
   margin-left: auto;
   margin-right: auto;
 }
@@ -45,22 +50,74 @@ body {
   display: block;
   margin-left: auto;
   margin-right: auto;
-  height: 300px;
+  height: 150px;
 }
 .index-content h1 {
   text-align: center;
-  font-size: 100px;
-  padding-top: 20px;
+  font-size: 40px;
+  padding-top: 10px;
 }
 .index-content h2 {
   text-align: center;
   margin-bottom: 20px;
 }
 .index-content p {
-  padding-top: 30px;
-  padding-bottom: 100px;
+  padding-top: 20px;
+  padding-bottom: 10px;
+}
+/* guestbook*/
+table {
+    margin-top: 50px;
+    width: 70%;
+    margin-right: auto;
+    margin-left: auto;
+    text-align: left;
+}
+th {
+    background-color: #5f3625;
+    border-radius: 5px;
+    padding: 5px;
+    color: bisque;
+    letter-spacing: 1.5px;
+}
+td {
+    padding: 5px;
+    font-size: 20px;
+    border-radius: 5px;
+    border: 2px solid rgb(177, 148, 112);
+}
+tbody tr:nth-child(even){
+  background-color: rgb(177, 148, 112);
+  color: #fff;
 }
 
+.newmessage-content {
+    margin-left: auto;
+    margin-right: auto;
+}
+.newmessage-content h3 {
+    text-align: center;
+    margin-top: 50px;
+}
+.newmessage-content input {
+    width: 100%;
+    font-size: 20px;
+    padding: 8px;
+    margin: 10px;
+    border-radius: 5px;
+}
+.newmessage-content button {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 20px;
+    width: 100px;
+    margin-top: 20px;
+    padding: 5px;
+    background-color: rgb(177, 148, 112);
+    border-radius: 3px;
+    font-weight: bold;
+}
 footer {
   text-align: center;
   margin-left: auto;

@@ -1,22 +1,30 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <meta charset="utf-8">
         <link rel="stylesheet" href="./css/styles.css">
         <title>New message</title>
     </head>
     <body>
         <nav class="navbar">
             <p>Guestbook</p>
-            <a href="/">Home</a>
-            <a href="/public/guestbook">Guestbook</a>
-            <a href="/public/newmessage">New Message</a>
-            <a href="/public/ajaxmessage">AJAX messages</a>
+            <ul>
+                <li><a href="/">Home</a></li>
+
+                <li><a href="/guestbook">Guestbook</a></li>
+
+                <li><a href="/newmessage">New Message</a></li>
+
+                <li><a href="/ajaxmessage">AJAX messages</a></li>
+
+            </ul>
         </nav>
-        <div>
+        <div class="newmessage-content">
+            <h3>Leave a message!</h3>
             <form method="post" action="#">
-                <input type="text" name="username" placeholder="Username"> 
-                <input type="text" name="country" placeholder="Country">
-                <input type="text" name="message" placeholder="Message">
+                <input type="text" name="username" placeholder="username" required> 
+                <input type="text" name="country" placeholder="country" required>
+                <input type="text" name="message" placeholder="message" required>
                 <button type="submit">Submit</button>
             </form>
         </div>
