@@ -17,8 +17,8 @@ app.get("/public/guestbook", function (req, res) {
 
     console.log(data);
 
-    let guestbook = "<table border='1' style='width:80%' >" +
-                    "<tr><th>Message</th><th>Username</th><th>Country</th></tr>";
+    let guestbook = "<table border='1' style='width:100%;'>" +
+                    "<tr style='width:100%'><th style='width:90%' >Message</th><th>Username</th><th>Country</th></tr>";
 
     for (let i = 0; i < data.length; i++) {
         guestbook += 
