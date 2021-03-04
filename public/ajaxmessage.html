@@ -7,18 +7,48 @@
         <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
         <script>
             window.onload = () => {
+
+                var submit = document.getElementById("submit-button");
                
-                $("#submit-button").on('click', function(event) {
+                submit.addEventListener("click", () => {
                     event.preventDefault();
-                    console.log("doog morning");
-                    let data = {
-                        username : document.getElementById("username").value,
-                        country : document.getElementById("country").value,
-                        date : new Date(),
-                        message : document.getElementById("message").value
+                    let username = document.getElementById("username").value;
+                    let country = document.getElementById("country").value;
+                    let message = document.getElementById("message").value;
+
+                    if (username === "" || country === "" || message === ""){
+
+                        document.getElementById("warning").innerHTML = "All fields must be filled. No empties allowed!" ;
+                    }else{
+                        let data = {
+                            username : username,
+                            country : country,
+                            date : new Date(),
+                            message : message
+                        }
+
+                        document.getElementById("warning").style.display = "none";
+
+                        $.post("/ajaxmessage", data ,(response) => {
+        
+
+                            let guestbook = 
+                                    '<table>' +
+                                        '<tr><th>Message</th><th>Username</th><th>Country</th></tr>';
+                                        
+                                        for (let i = 0; i < response.length; i++) {
+                                            guestbook +=
+                                            "<tr><td>" + response[i].message + "</td>" +
+                                            "<td>" + response[i].username + "</td>" + 
+                                            "<td>" + response[i].country + "</td></tr>";
+                                        };
+                                        
+                                        guestbook += '</table>';
+
+                            document.getElementById("updated-table").innerHTML = guestbook;
+                                    
+                        });
                     }
-                    console.log(data);
-                    $.post("/ajaxmessage", data);
                 });
             }
         </script>
@@ -29,13 +59,9 @@
             <p>Guestbook</p>
             <ul>
                 <li><a href="/">Home</a></li>
-
                 <li><a href="/guestbook">Guestbook</a></li>
-
                 <li><a href="/newmessage">New Message</a></li>
-
                 <li><a href="/ajaxmessage">AJAX messages</a></li>
-
             </ul>
         </nav>
         <div class="newmessage-content">
@@ -44,6 +70,7 @@
                 <input type="text" name="username" id="username" placeholder="username" required> 
                 <input type="text" name="country" id="country" placeholder="country" required>
                 <input type="text" name="message" id="message" placeholder="message" required>
+                <p id="warning"></p>
                 <button type="button" id="submit-button">Submit</button>
             </form>
             <div id="updated-table">

@@ -99,6 +99,7 @@ app.post("/ajaxmessage", function (req, res) {
     fs.writeFile("./data.json", dataStringify, function (err) {
         if (err) return console.log(err);
     });
+    res.status(200).json(data);
     
 });
 

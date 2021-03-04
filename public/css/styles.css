@@ -118,6 +118,9 @@ tbody tr:nth-child(even){
     border-radius: 3px;
     font-weight: bold;
 }
+form p {
+  color: red;
+}
 footer {
   text-align: center;
   margin-left: auto;
